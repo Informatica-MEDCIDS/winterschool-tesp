@@ -1,0 +1,15 @@
+project:
+  output-dir: _output
+  render:
+    - "*.qmd"
+    - "!README.md"
+    - "!tmp/"
+    - "!ignored.qmd"
+    - "!ignored-dir/"
+format:
+  pptx:
+    reference-doc: template.pptx
+
+
+
+

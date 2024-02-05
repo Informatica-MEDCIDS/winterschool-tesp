@@ -1,0 +1,8 @@
+---
+title: "Quarto, a new way to publish academic content"
+subtitle: "February 2024"
+date: "2024-02-01"
+author: "John Doe"
+---
+
+# Introduction to Quarto

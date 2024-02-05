@@ -1,0 +1,7 @@
+tmp
+*_files
+_*.local
+/.quarto/
+_output_production
+
+/_*.local

@@ -1,0 +1,8 @@
+---
+title: "Logseq a new way to take notes"
+subtitle: "February 2024"
+date: "2024-02-01"
+author: "John Doe"
+---
+
+# Introduction to Logseq
