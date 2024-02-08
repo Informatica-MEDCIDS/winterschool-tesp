@@ -1,8 +1,181 @@
 ---
-title: "Git"
-subtitle: "February 2024"
-date: "2024-02-01"
-author: "John Doe"
+title: "Getting Started with Git"
+subtitle: "Tools for Efficient Scientific Production"
+date: "2024-02-09"
+author: "Francisco Bischoff"
+format: 
+  pptx: 
+    reference-doc: ../template.pptx
+# format:
+#   revealjs: 
+#     center: false
+#     controls: true
+#     slide-number: true
+#     mouse-wheel: true
 ---
 
-# Introduction to Git
+## What is Git?
+
+Git is a distributed version control system that allows multiple people to collaborate on a project.
+
+![](images/paste-3.png)
+
+## What is Git?
+
+::: columns
+::: {.column width="40%"}
+CVS (1986), SVN (2000)
+
+```{mermaid}
+%%{init: {"flowchart": {'htmlLabels': false }} }%%
+
+flowchart RL
+  subgraph cs ["`**Central VCS Server**`"]
+    subgraph vd ["`**Version Database**`"]
+        direction BT
+        v1([Version 1]) --- v2([Version 2])
+        v2 --- v3([Version 3])
+    end
+  end
+  
+  subgraph B ["`**Computer B**`"]
+    vd --> f1([file]):::fileClass
+  end
+  subgraph A ["`**Computer A**`"]
+    vd --> f2([file]):::fileClass
+  end
+
+cs:::outerClass
+vd:::innerClass
+B:::outerClass
+A:::outerClass
+v1:::versionClass
+v2:::versionClass
+v3:::versionClass
+
+classDef fileClass fill:#9bf,stroke-width:0px
+classDef outerClass fill:#ddd,stroke:#333,stroke-width:1px
+classDef innerClass fill:#fff,stroke:#333,stroke-width:1px
+classDef versionClass fill:#eee,stroke-width:0px
+```
+:::
+
+::: {.column width="60%"}
+Git (2005), Mercurial (2005)
+
+```{mermaid}
+%%{init: {"flowchart": {'htmlLabels': false }} }%%
+
+flowchart LR
+  subgraph cs ["`**Server Computer**`"]
+    subgraph vd ["`**Version Database**`"]
+        direction BT
+        v1([Version 1]) --- v2([Version 2])
+        v2 --- v3([Version 3])
+    end
+  end
+  subgraph B ["`**Computer B**`"]
+    direction BT
+    vdb --> f2([file]):::fileClass
+    subgraph vdb ["`**Version Database**`"]
+        direction BT
+        v1b([Version 1]) --- v2b([Version 2])
+        v2b --- v3b([Version 3])
+    end
+  end
+  subgraph A ["`**Computer A**`"]
+    direction BT
+    vda --> f1([file]):::fileClass
+    subgraph vda ["`**Version Database**`"]
+        direction BT
+        v1a([Version 1]) --- v2a([Version 2])
+        v2a --- v3a([Version 3])
+    end
+  end
+A <--> cs
+cs <--> B
+A <--> B
+
+cs:::outerClass
+B:::outerClass
+A:::outerClass
+vd:::innerClass
+vda:::innerClass
+vdb:::innerClass
+v1:::versionClass
+v2:::versionClass
+v3:::versionClass
+v1a:::versionClass
+v2a:::versionClass
+v3a:::versionClass
+v1b:::versionClass
+v2b:::versionClass
+v3b:::versionClass
+
+classDef fileClass fill:#9bf,stroke-width:0px
+classDef outerClass fill:#ddd,stroke:#333,stroke-width:1px
+classDef innerClass fill:#fff,stroke:#333,stroke-width:1px
+classDef versionClass fill:#eee,stroke-width:0px
+```
+:::
+:::
+
+::: notes
+Intro: 5min
+:::
+
+## Why use Git?
+
+-   Git helps track changes to files and allows you to easily revert to previous versions.
+-   It enables collaboration and allows multiple people to work on the same project simultaneously.
+-   Git provides a history of changes, making it easier to understand the evolution of a project.
+
+::: notes
+Intro: 5min
+:::
+
+## Git Basics
+
+-   **Repository**: A Git repository is a collection of files and their complete history of changes.
+
+-   **Commit**: A commit is a snapshot of the repository at a specific point in time. It represents a set of changes made to the files.
+
+-   **Branch**: A branch is a separate line of development. It allows you to work on different features or bug fixes without affecting the main codebase.
+
+-   **Merge**: Merging combines changes from different branches into a single branch.
+
+::: notes
+Setup account: 10min
+:::
+
+## Git Workflow
+
+::: columns
+::: {.column width="40%"}
+1.  Create a new repository or clone an existing one.
+2.  Make changes to files in the repository.
+3.  Stage the changes.
+4.  Commit the changes.
+5.  Push the changes to a remote repository.
+:::
+
+::: {.column width="60%"}
+![Cheat sheet](images/paste-2.png){fig-align="right"}
+:::
+:::
+
+::: notes
+Hands-on: 15min
+:::
+
+## Conclusion
+
+::: columns
+::: {.column width="40%"}
+Git is a powerful tool for version control and collaboration. Understanding its basics is essential for any software developer.
+:::
+
+::: {.column width="60%"}
+![More information on Git](images/paste-1.png){fig-align="center" width="400"}
+:::
+:::

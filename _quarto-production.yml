@@ -1,4 +1,0 @@
-project:
-  output-dir: _output_production
-execute:
-  freeze: false
